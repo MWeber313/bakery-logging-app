@@ -1,22 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  let date = new Date();
+
+  console.log(date)
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Bakery Department</h1>
+        <h4>Sell-By Dating Ranges</h4>
+        <h5>*Remember*: 31 for Jan, Mar, May, Jul, Aug, Oct, Dec, 30<br></br>
+        30 for April, June, September, November <br></br>
+        28 for February (29 if a leap year)
+        </h5>
+        <h5>Is a leap year: </h5>
+        <ul>
+          <li>7 Days: </li>
+          <li>14 Days: </li>
+          <li>21 Days: </li>
+          <li>28 Days: </li>
+        </ul>
       </header>
     </div>
   );

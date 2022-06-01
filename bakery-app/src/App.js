@@ -2,9 +2,20 @@ import './App.css';
 
 function App() {
 
-  let date = new Date();
+  let today = new Date();
 
-  console.log(date)
+  console.log(today)
+
+  function blather (a) {
+    if (a/4) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  console.log(blather(2022))
 
   return (
     <div className="App">
@@ -15,7 +26,7 @@ function App() {
         30 for April, June, September, November <br></br>
         28 for February (29 if a leap year)
         </h5>
-        <h5>Is a leap year: </h5>
+        <h5>Is a leap year: {blather(today.getFullYear()) ? "Yes" : "No"} </h5>
         <ul>
           <li>7 Days: </li>
           <li>14 Days: </li>

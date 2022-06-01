@@ -6,16 +6,14 @@ function App() {
 
   console.log(today)
 
-  function blather (a) {
-    if (a/4) {
+  function isLeapYear (a) {
+    if (a%4 === 0) {
       return true
     }
     else {
       return false
     }
   }
-
-  console.log(blather(2022))
 
   return (
     <div className="App">
@@ -26,12 +24,12 @@ function App() {
         30 for April, June, September, November <br></br>
         28 for February (29 if a leap year)
         </h5>
-        <h5>Is a leap year: {blather(today.getFullYear()) ? "Yes" : "No"} </h5>
+        <h5>Is a leap year: {isLeapYear(today.getFullYear()) ? "Yes" : "No"} </h5>
         <ul>
-          <li>7 Days: </li>
-          <li>14 Days: </li>
-          <li>21 Days: </li>
-          <li>28 Days: </li>
+          <li>7 Days: {today.getMonth() + 1} / {today.getDate() + 7}</li>
+          <li>14 Days: {today.getMonth() + 1} / {today.getDate() + 14}</li>
+          <li>21 Days: {today.getMonth() + 1} / {today.getDate() + 21}</li>
+          <li>28 Days: {today.getMonth() + 1} / {today.getDate() + 28}</li>
         </ul>
       </header>
     </div>

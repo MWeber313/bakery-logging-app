@@ -15,6 +15,46 @@ function App() {
     }
   }
 
+  // Get dates for 4 different dates:
+  // Today + 7, +14, +21, +28
+  // These dates need to account for
+  // Rolling over into next month and whether or not it is a leap year
+
+  // Making an object to hold 4 different parameters of the modified date
+  let modifiedDate = {
+    datePlus7: 7,
+    datePlus14: 14,
+    datePlus21: 21,
+    datePlus28: 28
+  };
+
+  let currentMonth = today.getMonth();
+
+  let dayMonth = {
+    Jan: 31,
+    Feb: 28,
+    Mar: 31,
+    Apr: 30,
+    May: 31,
+    Jun: 30,
+    Jul: 31,
+    Aug: 31,
+    Sept: 30,
+    Oct: 31,
+    Nov: 30,
+    Dec: 31
+  }
+
+  for (let i in dayMonth) {
+    console.log(i === today.getMonth())
+    console.log(i, "=", today.getMonth())
+  }
+
+  // This function will map out the object and add the current day to the object's key/value pairs.
+  function dateCalculator(modifiedDate) {
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">

@@ -1,6 +1,12 @@
 import './App.css';
+import React, {useState} from 'react';
 
 function App() {
+
+  const [sevenDays, setSevenDays] = useState(0)
+  const [fourteenDays, setFourteenDays] = useState(0)
+  const [twentyoneDays, setTwentyoneDays] = useState(0)
+  const [twentyeightDays, setTwentyeightDays] = useState(0)
 
   let today = new Date();
 
@@ -95,10 +101,10 @@ let monthLength = [
   {Month: "Dec", Length: 31}
 ]
 
-  // This function will map out the object and add the current day to the object's key/value pairs.
-  function dateCalculator(modifiedDate) {
+// This function will map out the object and add the current day to the object's key/value pairs.
+function dateCalculator(dateToModify) {
 
-  }
+}
 
   return (
     <div className="App">

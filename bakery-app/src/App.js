@@ -45,6 +45,36 @@ function App() {
     Dec: 31
   }
 
+  let lengthMonth = [
+    31,
+    28,
+    31,
+    30,
+    31,
+    30,
+    31,
+    31,
+    30,
+    31,
+    30,
+    31
+  ]
+
+  let monthArray = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'June',
+    'July',
+    'Aug',
+    'Sept',
+    'Oct',
+    'Nov',
+    'Dec'
+  ]
+
   for (let i in dayMonth) {
     console.log(i === today.getMonth())
     console.log(i, "=", today.getMonth())

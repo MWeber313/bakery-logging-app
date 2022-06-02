@@ -30,55 +30,70 @@ function App() {
 
   let currentMonth = today.getMonth();
 
-  let dayMonth = {
-    Jan: 31,
-    Feb: 28,
-    Mar: 31,
-    Apr: 30,
-    May: 31,
-    Jun: 30,
-    Jul: 31,
-    Aug: 31,
-    Sept: 30,
-    Oct: 31,
-    Nov: 30,
-    Dec: 31
-  }
+  // let dayMonth = {
+  //   Jan: 31,
+  //   Feb: 28,
+  //   Mar: 31,
+  //   Apr: 30,
+  //   May: 31,
+  //   Jun: 30,
+  //   Jul: 31,
+  //   Aug: 31,
+  //   Sept: 30,
+  //   Oct: 31,
+  //   Nov: 30,
+  //   Dec: 31
+  // }
 
-  let lengthMonth = [
-    31,
-    28,
-    31,
-    30,
-    31,
-    30,
-    31,
-    31,
-    30,
-    31,
-    30,
-    31
-  ]
+  // let lengthMonth = [
+  //   31,
+  //   28,
+  //   31,
+  //   30,
+  //   31,
+  //   30,
+  //   31,
+  //   31,
+  //   30,
+  //   31,
+  //   30,
+  //   31
+  // ]
 
-  let monthArray = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'June',
-    'July',
-    'Aug',
-    'Sept',
-    'Oct',
-    'Nov',
-    'Dec'
-  ]
+  // let monthArray = [
+  //   'Jan',
+  //   'Feb',
+  //   'Mar',
+  //   'Apr',
+  //   'May',
+  //   'June',
+  //   'July',
+  //   'Aug',
+  //   'Sept',
+  //   'Oct',
+  //   'Nov',
+  //   'Dec'
+  // ]
 
-  for (let i in dayMonth) {
-    console.log(i === today.getMonth())
-    console.log(i, "=", today.getMonth())
-  }
+  // for (let i in dayMonth) {
+  //   console.log(i === today.getMonth())
+  //   console.log(i, "=", today.getMonth())
+  // }
+
+let monthLength = [
+  {Month: "Jan", Length: 31},
+  {Month: "Feb", Length: 28},
+  {Month: "Mar", Length: 31},
+  {Month: "Apr", Length: 30},
+  {Month: "May", Length: 31},
+  {Month: "Jun", Length: 30},
+  {Month: "Jul", Length: 31},
+  {Month: "Aug", Length: 31},
+  {Month: "Sept", Length: 30},
+  {Month: "Oct", Length: 31},
+  {Month: "Nov", Length: 30},
+  {Month: "Dec", Length: 31}
+]
 
   // This function will map out the object and add the current day to the object's key/value pairs.
   function dateCalculator(modifiedDate) {

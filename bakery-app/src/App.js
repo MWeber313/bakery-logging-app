@@ -2,15 +2,16 @@ import './App.css';
 import React, {useState} from 'react';
 
 function App() {
-
+  
+  let today = new Date();
+  
   const [sevenDays, setSevenDays] = useState(0)
   const [fourteenDays, setFourteenDays] = useState(0)
   const [twentyoneDays, setTwentyoneDays] = useState(0)
   const [twentyeightDays, setTwentyeightDays] = useState(0)
 
-  let today = new Date();
-
   console.log(today)
+  console.log('7 days', sevenDays)
 
   function isLeapYear (a) {
     if (a%4 === 0) {
@@ -117,10 +118,16 @@ function dateCalculator(dateToModify) {
         </h5>
         <h5>Is a leap year: {isLeapYear(today.getFullYear()) ? "Yes" : "No"} </h5>
         <ul>
-          <li>7 Days: {today.getMonth() + 1} / {today.getDate() + 7}</li>
+          <li>7 Days: {today.getMonth() + 1} / {today.getUTCDate() + 7}</li>
           <li>14 Days: {today.getMonth() + 1} / {today.getDate() + 14}</li>
           <li>21 Days: {today.getMonth() + 1} / {today.getDate() + 21}</li>
-          <li>28 Days: {today.getMonth() + 1} / {today.getDate() + 28}</li>
+          <li>28 Days: {today.getMonth() + 1} / {today.getUTCDate() + 28}</li>
+        </ul>
+        <ul>
+          <li>7 Days: {today.getMonth() + 1} / {sevenDays}</li>
+          <li>14 Days: {today.getMonth() + 1} / {fourteenDays}</li>
+          <li>21 Days: {today.getMonth() + 1} / {twentyoneDays}</li>
+          <li>28 Days: {today.getMonth() + 1} / {twentyeightDays}</li>
         </ul>
       </header>
     </div>

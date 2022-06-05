@@ -6,12 +6,29 @@ function App() {
   let today = new Date();
   
   const [sevenDays, setSevenDays] = useState(today.getUTCDate())
+  const [sevenDaysMonth, setSevenDaysMonth] = useState(today.getUTCMonth()+1);
+
   const [fourteenDays, setFourteenDays] = useState(today.getUTCDate())
+  const [fourteenDaysMonth, setFourteenDaysMonth] = useState(today.getUTCMonth()+1);
+
   const [twentyoneDays, setTwentyoneDays] = useState(today.getUTCDate())
+  const [twentyoneDaysMonth, setTwentyoneDaysMonth] = useState(today.getUTCMonth()+1);
+
   const [twentyeightDays, setTwentyeightDays] = useState(today.getUTCDate())
+  const [twentyeightDaysMonth, setTwentyeightDaysMonth] = useState(today.getUTCMonth()+1);
 
   useEffect(() => {
     setSevenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+7)));
+    setSevenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+    
+    setFourteenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+14)));
+    setFourteenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+    
+    setTwentyoneDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+21)));
+    setTwentyoneDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+
+    setTwentyeightDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+28)));
+    setTwentyeightDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
   })
   console.log(today)
   console.log('7 days', sevenDays)
@@ -127,10 +144,10 @@ function dateCalculator(dateToModify) {
           <li>28 Days: {today.getMonth() + 1} / {today.getUTCDate() + 28}</li>
         </ul>
         <ul>
-          <li>7 Days: {today.getMonth() + 1} / {sevenDays}</li>
-          <li>14 Days: {today.getMonth() + 1} / {fourteenDays}</li>
-          <li>21 Days: {today.getMonth() + 1} / {twentyoneDays}</li>
-          <li>28 Days: {today.getMonth() + 1} / {twentyeightDays}</li>
+          <li>7 Days: {sevenDaysMonth} / {sevenDays}</li>
+          <li>14 Days: {fourteenDaysMonth} / {fourteenDays}</li>
+          <li>21 Days: {twentyoneDaysMonth} / {twentyoneDays}</li>
+          <li>28 Days: {twentyeightDaysMonth} / {twentyeightDays}</li>
         </ul>
       </header>
     </div>

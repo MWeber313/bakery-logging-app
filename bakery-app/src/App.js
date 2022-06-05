@@ -11,7 +11,7 @@ function App() {
   const [twentyeightDays, setTwentyeightDays] = useState(today.getUTCDate())
 
   useEffect(() => {
-    setSevenDays(today.setUTCDate(7));
+    setSevenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+7)));
   })
   console.log(today)
   console.log('7 days', sevenDays)

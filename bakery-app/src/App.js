@@ -21,14 +21,14 @@ function App() {
     setSevenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+7)));
     setSevenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
     
-    setFourteenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+14)));
-    setFourteenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+    setFourteenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-7+14)));
+    setFourteenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
     
-    setTwentyoneDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+21)));
-    setTwentyoneDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+    setTwentyoneDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-14+21)));
+    setTwentyoneDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
 
-    setTwentyeightDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+28)));
-    setTwentyeightDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+    setTwentyeightDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-21+28)));
+    setTwentyeightDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
   })
   console.log(today)
   console.log('7 days', sevenDays)

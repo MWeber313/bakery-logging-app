@@ -1,15 +1,18 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 function App() {
   
   let today = new Date();
   
-  const [sevenDays, setSevenDays] = useState(0)
-  const [fourteenDays, setFourteenDays] = useState(0)
-  const [twentyoneDays, setTwentyoneDays] = useState(0)
-  const [twentyeightDays, setTwentyeightDays] = useState(0)
+  const [sevenDays, setSevenDays] = useState(today.getUTCDate())
+  const [fourteenDays, setFourteenDays] = useState(today.getUTCDate())
+  const [twentyoneDays, setTwentyoneDays] = useState(today.getUTCDate())
+  const [twentyeightDays, setTwentyeightDays] = useState(today.getUTCDate())
 
+  useEffect(() => {
+    setSevenDays(today.setUTCDate(7));
+  })
   console.log(today)
   console.log('7 days', sevenDays)
 

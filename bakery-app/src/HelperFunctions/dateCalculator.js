@@ -1,22 +1,26 @@
-let currentDate = Date.now();
+let currentDate = new Date();
 let modifiedDate = currentDate;
-console.log(modifiedDate);
+
 
 function dateCalculator (date_arg) {
     let leapYear = false;
-    let yearOf = currentDate.getYear();
+    let yearOf = date_arg.getFullYear();
     function isLeapYear(date_arg_ly) {
         if (date_arg_ly % 4) {
+            return
+        }
+        else {
             leapYear = true
         }
-
         return leapYear;
     }
     isLeapYear(yearOf);
-    
+    return yearOf, leapYear;
 }
 
-export default dateCalculator;
+console.log(dateCalculator(modifiedDate));
+
+// export default dateCalculator;
 
 /*
 

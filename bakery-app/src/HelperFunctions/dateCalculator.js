@@ -1,6 +1,6 @@
 let currentDate = new Date();
 let modifiedDate = currentDate;
-
+import {gregorianCalendarArray} from './monthArray.js';
 
 function dateCalculator (date_arg, n) {
     // leapYear sets bool var - is this year a leap year?
@@ -17,7 +17,28 @@ function dateCalculator (date_arg, n) {
         }
         return leapYear;
     }
-    const leapYearBool = isLeapYear(yearOf);
+
+    // This sets the leap year boolean
+    isLeapYear(yearOf);
+
+    // gets the current month and date, which I need separate
+    let currMonth = date_arg.getMonth();
+    let currDate = date_arg.getDate();
+    let modDate = currDate + n;
+
+    // this will set the paths between leap and not leap year calculation
+    if (isLeapYear === false) {
+        
+        
+    }
+
+    else if (isLeapYear === true) {
+
+    }
+    
+    else {
+        console.error("A Boolean must be passed in the first round of conditionals")
+    }
     
 }
 console.log(currentDate)

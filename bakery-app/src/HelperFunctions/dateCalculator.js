@@ -78,20 +78,29 @@ function dateCalculator (date_arg, n) {
     let modDate = currDate + n;
     
     // this will set the paths between leap and not leap year calculation
-    if (isLeapYear === false) {
-        console.log(gregorianCalendarArray[5])
+    if (leapYear === false) {
+        console.log(currDate)
+        currDate += n 
+        console.log(currDate)
+        console.log('Is not a leap year', gregorianCalendarArray[5])
         
+        return (currMonth, '/', currDate)
     }
 
-    else if (isLeapYear === true) {
-        console.log(gregorianCalendarArray[5])
+    else if (leapYear === true) {
+        console.log('Is a leap year', gregorianCalendarArray[5])
     }
     
     else {
         console.error("A Boolean must be passed in the first round of conditionals")
     }
-    
+
+    return (currMonth, '/', currDate)
 }
+
+const date = dateCalculator(currentDate, 7);
+console.log(date);
+
 
 console.log(gregorianCalendarArray[5])
 // console.log(currentDate)

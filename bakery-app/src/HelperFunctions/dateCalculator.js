@@ -1,7 +1,58 @@
 let currentDate = new Date();
 let modifiedDate = currentDate;
-import {gregorianCalendarArray} from './monthArray.js';
+// import gregorianCalendarArray from './monthArray.js';
 
+const gregorianCalendarArray = [
+    Jan = {
+        name: "January",
+        days: 31
+    },
+    Feb = {
+        name: "February",
+        days: 28,
+        daysLeap: 29
+    },
+    Mar = {
+        name: "March",
+        days: 31
+    },
+    Apr = {
+        name: "April",
+        days: 30
+    },
+    May = {
+        name: "May",
+        days: 31
+    },
+    Jun = {
+        name: "June",
+        days: 30
+    },
+    July = {
+        name: "July",
+        days: 31
+    },
+    Aug = {
+        name: "August",
+        days: 31
+    },
+    Sept = {
+        name: "September",
+        days: 30
+    },
+    Oct = {
+        name: "October",
+        days: 31
+    },
+    Nov = {
+        name: "November",
+        days: 30
+    },
+    Dec = {
+        name: "December",
+        days: 31
+    },
+]
 function dateCalculator (date_arg, n) {
     // leapYear sets bool var - is this year a leap year?
     let leapYear = false;
@@ -25,15 +76,15 @@ function dateCalculator (date_arg, n) {
     let currMonth = date_arg.getMonth();
     let currDate = date_arg.getDate();
     let modDate = currDate + n;
-
+    
     // this will set the paths between leap and not leap year calculation
     if (isLeapYear === false) {
-        
+        console.log(gregorianCalendarArray[5])
         
     }
 
     else if (isLeapYear === true) {
-
+        console.log(gregorianCalendarArray[5])
     }
     
     else {
@@ -41,10 +92,12 @@ function dateCalculator (date_arg, n) {
     }
     
 }
-console.log(currentDate)
-console.log(modifiedDate)
 
-console.log(dateCalculator(modifiedDate));
+console.log(gregorianCalendarArray[5])
+// console.log(currentDate)
+// console.log(modifiedDate)
+
+// console.log(dateCalculator(modifiedDate));
 
 // export default dateCalculator;
 

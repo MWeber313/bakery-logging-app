@@ -73,19 +73,27 @@ function dateCalculator (date_arg, n) {
     isLeapYear(yearOf);
 
     // gets the current month and date, which I need separate
-    let currMonth = date_arg.getMonth() + 1;
-    let currDate = date_arg.getDate();
-    let modDate = currDate + n;
+    let actualMonth = date_arg.getMonth() + 1;
+    let utcMonth = date_arg.getMonth();
+    let actualDate = date_arg.getDate();
+    let modDate = actualDate + n;
     
+    console.log(gregorianCalendarArray[utcMonth].days)
     // this will set the paths between leap and not leap year calculation
     if (leapYear === false) {
-
-        return (currMonth + '/' + modDate)
+        if (modDate <= gregorianCalendarArray[utcMonth].days) {
+            return (actualMonth + '/' + modDate)
+        }
+        else {
+            actualMonth += 1;
+            modDate = gregorianCalendarArray[utcMonth+1].days - modDate;
+            return (actualMonth + '/' + modDate)
+        }
     }
 
     else if (leapYear === true) {
-        currDate += n;
-        return (currMonth + '/' + modDate)
+
+        return (actualMonth + '/' + modDate)
     }
     
     else {
@@ -96,10 +104,8 @@ function dateCalculator (date_arg, n) {
 }
 
 const date = dateCalculator(currentDate, 7);
-console.log(date);
 
 
-console.log(gregorianCalendarArray[5])
 // console.log(currentDate)
 // console.log(modifiedDate)
 

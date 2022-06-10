@@ -79,33 +79,40 @@ function dateCalculator (date_arg, n) {
     let modDate = actualDate + n;
     
     console.log(gregorianCalendarArray[utcMonth].days)
+    console.log(modDate);
     // this will set the paths between leap and not leap year calculation
     if (leapYear === false) {
+        console.log("how?")
+        console.log(typeof(modDate));
+        console.log(typeof(gregorianCalendarArray[utcMonth].days))
+        console.log(modDate <= gregorianCalendarArray[utcMonth].days)
         if (modDate <= gregorianCalendarArray[utcMonth].days) {
             return (actualMonth + '/' + modDate)
-        }
-        else {
+        } 
+        else if (modDate > gregorianCalendarArray[utcMonth].days) {
             actualMonth += 1;
-            modDate = gregorianCalendarArray[utcMonth+1].days - modDate;
+            modDate = modDate - gregorianCalendarArray[utcMonth].days;
             return (actualMonth + '/' + modDate)
+        } else {
+            console.error("You goofed");
+            return;
         }
     }
-
+    
     else if (leapYear === true) {
-
         return (actualMonth + '/' + modDate)
     }
     
     else {
         console.error("A Boolean must be passed in the first round of conditionals")
     }
-
-    return (currMonth, '/', currDate)
+    
+    return (actualMonth + '/' + modDate);
 }
 
-const date = dateCalculator(currentDate, 7);
+const date = dateCalculator(currentDate, 21);
 
-
+console.log(date);
 // console.log(currentDate)
 // console.log(modifiedDate)
 

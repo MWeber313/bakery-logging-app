@@ -110,9 +110,16 @@ function dateCalculator (date_arg, n) {
     return (actualMonth + '/' + modDate);
 }
 
-const date = dateCalculator(currentDate, 21);
+const date7 = dateCalculator(currentDate, 7);
+const date14 = dateCalculator(currentDate, 14);
+const date21 = dateCalculator(currentDate, 21);
+const date28 = dateCalculator(currentDate, 28);
 
-console.log(date);
+
+console.log(date7);
+console.log(date14);
+console.log(date21);
+console.log(date28);
 // console.log(currentDate)
 // console.log(modifiedDate)
 

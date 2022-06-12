@@ -2,7 +2,7 @@ let currentDate = new Date();
 let modifiedDate = currentDate;
 // import gregorianCalendarArray from './monthArray.js';
 
-const gregorianCalendarArray = [
+export const gregorianCalendarArray = [
     Jan = {
         name: "January",
         days: 31
@@ -53,7 +53,7 @@ const gregorianCalendarArray = [
         days: 31
     },
 ]
-function dateCalculator (date_arg, n) {
+export function dateCalculator (date_arg, n) {
     // leapYear sets bool var - is this year a leap year?
     let leapYear = false;
     // yearOf is int type, built off the parameter that is the current Date (JS obj) and gets the full year
@@ -82,10 +82,6 @@ function dateCalculator (date_arg, n) {
     console.log(modDate);
     // this will set the paths between leap and not leap year calculation
     if (leapYear === false) {
-        console.log("how?")
-        console.log(typeof(modDate));
-        console.log(typeof(gregorianCalendarArray[utcMonth].days))
-        console.log(modDate <= gregorianCalendarArray[utcMonth].days)
         if (modDate <= gregorianCalendarArray[utcMonth].days) {
             return (actualMonth + '/' + modDate)
         } 

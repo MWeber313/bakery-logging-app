@@ -1,37 +1,38 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
+import {dateCalculator} from './HelperFunctions/dateCalculator.js';
 
 function App() {
   
   let today = new Date();
   
-  const [sevenDays, setSevenDays] = useState(today.getUTCDate())
-  const [sevenDaysMonth, setSevenDaysMonth] = useState(today.getUTCMonth()+1);
+  // const [sevenDays, setSevenDays] = useState(today.getUTCDate())
+  // const [sevenDaysMonth, setSevenDaysMonth] = useState(today.getUTCMonth()+1);
 
-  const [fourteenDays, setFourteenDays] = useState(today.getUTCDate())
-  const [fourteenDaysMonth, setFourteenDaysMonth] = useState(today.getUTCMonth()+1);
+  // const [fourteenDays, setFourteenDays] = useState(today.getUTCDate())
+  // const [fourteenDaysMonth, setFourteenDaysMonth] = useState(today.getUTCMonth()+1);
 
-  const [twentyoneDays, setTwentyoneDays] = useState(today.getUTCDate())
-  const [twentyoneDaysMonth, setTwentyoneDaysMonth] = useState(today.getUTCMonth()+1);
+  // const [twentyoneDays, setTwentyoneDays] = useState(today.getUTCDate())
+  // const [twentyoneDaysMonth, setTwentyoneDaysMonth] = useState(today.getUTCMonth()+1);
 
-  const [twentyeightDays, setTwentyeightDays] = useState(today.getUTCDate())
-  const [twentyeightDaysMonth, setTwentyeightDaysMonth] = useState(today.getUTCMonth()+1);
+  // const [twentyeightDays, setTwentyeightDays] = useState(today.getUTCDate())
+  // const [twentyeightDaysMonth, setTwentyeightDaysMonth] = useState(today.getUTCMonth()+1);
 
-  useEffect(() => {
-    setSevenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+7)));
-    setSevenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
+  // useEffect(() => {
+  //   setSevenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()+7)));
+  //   setSevenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth()+1)));
     
-    setFourteenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-7+14)));
-    setFourteenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
+  //   setFourteenDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-7+14)));
+  //   setFourteenDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
     
-    setTwentyoneDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-14+21)));
-    setTwentyoneDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
+  //   setTwentyoneDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-14+21)));
+  //   setTwentyoneDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
 
-    setTwentyeightDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-21+28)));
-    setTwentyeightDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
-  })
-  console.log(today)
-  console.log('7 days', sevenDays)
+  //   setTwentyeightDays(today.getUTCDate(today.setUTCDate(today.getUTCDate()-21+28)));
+  //   setTwentyeightDaysMonth(today.getUTCMonth(today.setUTCMonth(today.getUTCMonth())));
+  // })
+  // console.log(today)
+  // console.log('7 days', sevenDays)
 
   function isLeapYear (a) {
     if (a%4 === 0) {
@@ -143,11 +144,17 @@ function dateCalculator(dateToModify) {
           <li>21 Days: {today.getMonth() + 1} / {today.getDate() + 21}</li>
           <li>28 Days: {today.getMonth() + 1} / {today.getUTCDate() + 28}</li>
         </ul>
-        <ul>
-          <li>7 Days: {sevenDaysMonth} / {sevenDays}</li>
+        {/* <ul>
+         <li>7 Days: {sevenDaysMonth} / {sevenDays}</li>
           <li>14 Days: {fourteenDaysMonth} / {fourteenDays}</li>
           <li>21 Days: {twentyoneDaysMonth} / {twentyoneDays}</li>
           <li>28 Days: {twentyeightDaysMonth} / {twentyeightDays}</li>
+        </ul> */}
+        <ul>
+          <li>7 Days: {dateCalculator(7)}</li>
+          <li>14 Days: {}</li>
+          <li>21 Days: {}</li>
+          <li>28 Days: {}</li>
         </ul>
       </header>
     </div>

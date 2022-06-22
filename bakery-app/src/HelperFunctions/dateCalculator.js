@@ -2,7 +2,7 @@ let currentDate = new Date();
 let modifiedDate = currentDate;
 // import gregorianCalendarArray from './monthArray.js';
 
-export const gregorianCalendarArray = [
+const gregorianCalendarArray = [
     Jan = {
         name: "January",
         days: 31
@@ -53,7 +53,7 @@ export const gregorianCalendarArray = [
         days: 31
     },
 ]
-export function dateCalculator (date_arg, n) {
+function dateCalculator (date_arg, n) {
     // leapYear sets bool var - is this year a leap year?
     let leapYear = false;
     // yearOf is int type, built off the parameter that is the current Date (JS obj) and gets the full year

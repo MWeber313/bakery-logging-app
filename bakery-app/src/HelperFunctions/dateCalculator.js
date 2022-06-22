@@ -1,58 +1,74 @@
 let currentDate = new Date();
-let modifiedDate = currentDate;
-// import gregorianCalendarArray from './monthArray.js';
+// let modifiedDate = currentDate;
+// import {gregorianCalendarArray} from './monthArray.js';
 
-const gregorianCalendarArray = [
-    Jan = {
+let gregorianCalendarArray = []
+
+let Jan = {
         name: "January",
         days: 31
-    },
-    Feb = {
+    }
+let Feb = {
         name: "February",
         days: 28,
         daysLeap: 29
-    },
-    Mar = {
+    }
+let Mar = {
         name: "March",
         days: 31
-    },
-    Apr = {
+    }
+let Apr = {
         name: "April",
         days: 30
-    },
-    May = {
+    }
+let May = {
         name: "May",
         days: 31
-    },
-    Jun = {
+    }
+let Jun = {
         name: "June",
         days: 30
-    },
-    July = {
+    }
+let July = {
         name: "July",
         days: 31
-    },
-    Aug = {
+    }
+let Aug = {
         name: "August",
         days: 31
-    },
-    Sept = {
+    }
+let Sept = {
         name: "September",
         days: 30
-    },
-    Oct = {
+    }
+let Oct = {
         name: "October",
         days: 31
-    },
-    Nov = {
+    }
+let Nov = {
         name: "November",
         days: 30
-    },
-    Dec = {
+    }
+let Dec = {
         name: "December",
         days: 31
-    },
-]
+    }
+
+gregorianCalendarArray.push(Jan)
+gregorianCalendarArray.push(Feb)
+gregorianCalendarArray.push(Mar)
+gregorianCalendarArray.push(Apr)
+gregorianCalendarArray.push(May)
+gregorianCalendarArray.push(Jun)
+
+gregorianCalendarArray.push(July)
+gregorianCalendarArray.push(Aug)
+gregorianCalendarArray.push(Sept)
+gregorianCalendarArray.push(Oct)
+gregorianCalendarArray.push(Nov)
+gregorianCalendarArray.push(Dec)
+
+
 function dateCalculator (date_arg, n) {
     // leapYear sets bool var - is this year a leap year?
     let leapYear = false;
@@ -131,3 +147,5 @@ NOTES:
 -n = # of days from the current date to be calculated
 
 */
+
+export {dateCalculator, gregorianCalendarArray}

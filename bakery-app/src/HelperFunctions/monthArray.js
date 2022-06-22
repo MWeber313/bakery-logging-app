@@ -1,4 +1,4 @@
-const gregorianCalendarArray = [
+let gregorianCalendarArray = [
     Jan = {
         name: "January",
         days: 31
@@ -50,4 +50,4 @@ const gregorianCalendarArray = [
     },
 ]
 
-export default gregorianCalendarArray;
+export {gregorianCalendarArray};

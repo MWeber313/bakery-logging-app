@@ -1,8 +1,11 @@
+import { cookieSheetArray } from "./sheetArray";
 /*
 
 Cookie sheet calculator psuedo:
 
 Arguments taken in: Type of cookie, how many boxes of that type
+-type of cookie should be a string?
+-boxes should be a whole number
 
 Returns: How many sheet trays needed
 
@@ -19,6 +22,13 @@ If the number of sheet trays is not a whole number, it should be rounded UP to a
 
 */
 
-function sheetCalculator () {
-
+function sheetCalculator (type, boxes) {
+    let amountPerSheet = cookieSheetArray[type][1];
+    let totalBoxes = Math.ceil(boxes/amountPerSheet);
+    return totalBoxes;
 }
+
+let test = sheetCalculator('16', 3);
+
+console.log(test)
+

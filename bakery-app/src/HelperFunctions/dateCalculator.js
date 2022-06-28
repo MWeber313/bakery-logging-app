@@ -167,6 +167,13 @@ let dateCalculator = (date_arg, n) => {
         if (modDate <= gregorianCalendarArray[utcMonth][1]) {
             return (actualMonth + '/' + modDate)
         }
+        else if (modDate > gregorianCalendarArray[utcMonth][1]) {
+            actualMonth += 1;
+
+        }
+        else {
+
+        }
     }
 
 }

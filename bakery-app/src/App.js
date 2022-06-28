@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {dateCalculator, gregorianCalendarArray} from './HelperFunctions/dateCalculator.js';
+import {dateCalculator} from './HelperFunctions/dateCalculator.js';
 import isLeapYear from './HelperFunctions/isLeapYear';
 
 function App() {
@@ -35,12 +35,12 @@ function App() {
         30 for April, June, September, November <br></br>
         28 for February (29 if a leap year)
         </h5>
-        <h5>Is a leap year: {isLeapYear(today.getFullYear()) ? "Yes" : "No"} </h5>
+        <h5>Is a leap year: {() => isLeapYear(today.getFullYear()) ? "Yes" : "No"} </h5>
         <ul>
-          <li>7 Days: {dateCalculator(today, 7)}</li>
-          <li>14 Days: {dateCalculator(today, 14)}</li>
-          <li>21 Days: {dateCalculator(today, 21)}</li>
-          <li>28 Days: {dateCalculator(today, 28)}</li>
+          <li>7 Days: {() =>dateCalculator(today, 7)}</li>
+          <li>14 Days: {() => dateCalculator(today, 14)}</li>
+          <li>21 Days: {() => dateCalculator(today, 21)}</li>
+          <li>28 Days: {() => dateCalculator(today, 28)}</li>
         </ul>
       </header>
     </div>

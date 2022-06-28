@@ -1,74 +1,7 @@
 import {gregorianCalendarArray} from './monthArray.js';
 import isLeapYear from './isLeapYear';
-let currentDate = new Date();
-// let modifiedDate = currentDate;
 
-// let gregorianCalendarArray = []
-
-// let Jan = {
-//         name: "January",
-//         days: 31
-//     }
-// let Feb = {
-//         name: "February",
-//         days: 28,
-//         daysLeap: 29
-//     }
-// let Mar = {
-//         name: "March",
-//         days: 31
-//     }
-// let Apr = {
-//         name: "April",
-//         days: 30
-//     }
-// let May = {
-//         name: "May",
-//         days: 31
-//     }
-// let Jun = {
-//         name: "June",
-//         days: 30
-//     }
-// let July = {
-//         name: "July",
-//         days: 31
-//     }
-// let Aug = {
-//         name: "August",
-//         days: 31
-//     }
-// let Sept = {
-//         name: "September",
-//         days: 30
-//     }
-// let Oct = {
-//         name: "October",
-//         days: 31
-//     }
-// let Nov = {
-//         name: "November",
-//         days: 30
-//     }
-// let Dec = {
-//         name: "December",
-//         days: 31
-//     }
-
-// gregorianCalendarArray.push(Jan)
-// gregorianCalendarArray.push(Feb)
-// gregorianCalendarArray.push(Mar)
-// gregorianCalendarArray.push(Apr)
-// gregorianCalendarArray.push(May)
-// gregorianCalendarArray.push(Jun)
-
-// gregorianCalendarArray.push(July)
-// gregorianCalendarArray.push(Aug)
-// gregorianCalendarArray.push(Sept)
-// gregorianCalendarArray.push(Oct)
-// gregorianCalendarArray.push(Nov)
-// gregorianCalendarArray.push(Dec)
-
+// Old version
 
 // function dateCalculator (date_arg, n) {
 //     console.log("HI", gregorianCalendarArray)
@@ -126,22 +59,9 @@ let currentDate = new Date();
 //     return (actualMonth + '/' + modDate);
 // }
 
-const date7 = dateCalculator(currentDate, 7);
-const date14 = dateCalculator(currentDate, 14);
-const date21 = dateCalculator(currentDate, 21);
-const date28 = dateCalculator(currentDate, 28);
 
 
-// console.log(date7);
-// console.log(date14);
-// console.log(date21);
-// console.log(date28);
-// console.log(currentDate)
-// console.log(modifiedDate)
 
-// console.log(dateCalculator(modifiedDate));
-
-// export default dateCalculator;
 
 /*
 
@@ -155,27 +75,39 @@ NOTES:
 let dateCalculator = (date_arg, n) => {
     let leapYear = false;
     let yearOf = date_arg.getFullYear
-
+    
     leapYear = isLeapYear(yearOf)
-
+    
     let actualMonth = date_arg.getMonth() + 1;
     let utcMonth = date_arg.getMonth();
     let actualDate = date_arg.getDate();
     let modDate = actualDate + n;
-
+    
     if (leapYear === false) {
         if (modDate <= gregorianCalendarArray[utcMonth][1]) {
-            return (actualMonth + '/' + modDate)
+            return (actualMonth + '/' + modDate);
         }
         else if (modDate > gregorianCalendarArray[utcMonth][1]) {
             actualMonth += 1;
-
+            modDate = modDate - gregorianCalendarArray[utcMonth][1];
+            return (actualMonth + '/' + modDate);
         }
         else {
-
+            console.error("Error with variable: modDate calculation")
+            return;
         }
+    } 
+
+    else if (leapYear === true) {
+        return (actualMonth + '/' + modDate);
     }
 
+    else {
+        console.error("Leapyear must be boolean data type");
+        return;
+    }
+    
 }
+
 
 export {dateCalculator, gregorianCalendarArray}

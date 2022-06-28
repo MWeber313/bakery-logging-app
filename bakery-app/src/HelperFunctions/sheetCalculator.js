@@ -1,4 +1,4 @@
-import { cookieSheetArray } from "./sheetArray";
+// import { cookieSheetArray } from "./sheetArray";
 /*
 
 Cookie sheet calculator psuedo:
@@ -22,13 +22,31 @@ If the number of sheet trays is not a whole number, it should be rounded UP to a
 
 */
 
+let cookieSheetArray = [
+    ['16', 1.5],
+    ['10', 2],
+    ['6', 3]
+]
+
+let cookieSheetObject = {
+    '16': 1.5,
+    '10': 2,
+    '6': 3
+}
+
 function sheetCalculator (type, boxes) {
-    let amountPerSheet = cookieSheetArray[type][1];
+    console.log(type, typeof(type));
+    let amountPerSheet = cookieSheetObject[type];
+    console.log(amountPerSheet, typeof(amountPerSheet));
     let totalBoxes = Math.ceil(boxes/amountPerSheet);
     return totalBoxes;
 }
 
 let test = sheetCalculator('16', 3);
+console.log(test);
 
-console.log(test)
+let test2 = sheetCalculator('10', 4);
+console.log(test2);
 
+let test3 = sheetCalculator('6', 6);
+console.log(test3);

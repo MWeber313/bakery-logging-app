@@ -22,11 +22,11 @@ If the number of sheet trays is not a whole number, it should be rounded UP to a
 
 */
 
-let cookieSheetArray = [
-    ['16', 1.5],
-    ['10', 2],
-    ['6', 3]
-]
+// let cookieSheetArray = [
+//     ['16', 1.5],
+//     ['10', 2],
+//     ['6', 3]
+// ]
 
 let cookieSheetObject = {
     '16': 1.5,
@@ -50,3 +50,5 @@ console.log(test2);
 
 let test3 = sheetCalculator('6', 6);
 console.log(test3);
+
+export {sheetCalculator};
